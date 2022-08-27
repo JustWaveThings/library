@@ -5,10 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <script src="library.js" defer></script>
+    <script src="formtest.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <section class="book-form">
+        <div class="container">
+            <form id="book-add">
+                <fieldset>
+                    <legend>Enter Book Details to Add to Library </legend>
+                        <div class="form-control">
+                            <label for="title">Title *</label> <input id="title" name="title" type="text" required>
+                        </div>
+                        <div class="form-control">
+                            <label for="author">Author *</label> <input type="text" name="author" id="author" required>
+                        </div>
+                        <div class="form-control">
+                            <label for="pages">Pages *</label> <input type="numer" name="pages" id="pages" required>
+                        </div>
+                        <div class="form-control">
+                            <label for="read">Read/Unread </label> <select name="read" id="read">
+                               <option value="select"selected>select</option>
+                                <option value="read">read</option>
+                                <option value="unread">unread</option>
+                            </select>
+                        </div>
+                        <button class="btn" type="submit">Add Book </button>
+                </fieldset>
+            </form>
+    </section>
 </body>
 </html>
