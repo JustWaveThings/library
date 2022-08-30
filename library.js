@@ -1,36 +1,42 @@
-let myLibrary = [];
+myLibrary = [];
 
-function Book() {
+function Book(title, author, pages, readStatus) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.readStatus = readStatus;
 }
 
+/* Book.prototype.info = function () {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus}.`
+} */
 
-Book.prototype.title = function () {
-  return prompt("What is the title of the book?")
-}
-Book.prototype.author= function () {
-  return prompt("What is the author of the book?");
+Book.prototype.bookIndex = function (length = 5) {
+  this.index = "";
+  let characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    this.index += characters.charAt(
+      Math.floor(Math.random() * charactersLength)
+    );
+  }
+  return this.index;
 };
-Book.prototype.pages = function () {
-  return prompt("How many pages are in the book?");
+
+Book.prototype.addBookToLibrary = function () {
+  this.bookIndex();
+  myLibrary.push(this);
 };
-Book.prototype.read = function () {
-  return prompt("Have you read the book?");
-};
 
-/* Book.prototype.bookIndex = function(length = 5) {
-    let result = "";
-    let characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  } */
+const book1 = new Book(
+  "The Hobbit",
+  "J.R.R. Tolkien",
+  450,
+  "yes, I have read it"
+);
+const book2 = new Book("Catch-22", "Joseph Heller", 400, "Yes, I have read it");
 
-function addBookToLibrary(index = "555") {
-  let title = new Book.prototype.title()
-  myLibrary.push(title);
-  myLibrary.push(index);
-}
+book1.addBookToLibrary(); // adds book1 to myLibrary array with the index as a property
 
+console.log(myLibrary);

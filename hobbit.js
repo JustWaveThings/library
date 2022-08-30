@@ -22,23 +22,15 @@ Book.prototype.bookIndex = function (length = 5) {
   return this.index
 };
 
-Book.prototype.addBookToLibrary = function (book) {
+Book.prototype.addBookToLibrary = function () {
     this.bookIndex();
-    myLibrary.push(book);
+    myLibrary.push(this);
 };
 
 const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 450, "yes, I have read it")
 const book2 = new Book("Catch-22", "Joseph Heller", 400, "Yes, I have read it")
 
 
+book1.addBookToLibrary(); // adds book1 to myLibrary array with the index as a property
 
-
-//console.log(book1.info()) // The Hobbit by J.R.R. Tolkien, 450 pages, yes, I have read it.
-console.log(book1)  // Book {title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 450, readStatus: 'yes, I have read it'}
-
-
-book1.bookIndex();
-book2.bookIndex();
-addBookToLibrary(book1);
-addBookToLibrary(book2);
 console.log(myLibrary); 

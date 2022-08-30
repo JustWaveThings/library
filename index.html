@@ -9,33 +9,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="book-form">
-        <div class="container">
-            <form id="book-add">
-                <fieldset>
-                    <legend>Enter Book Details to Add to Library </legend>
-                        <div class="form-control">
-                            <label for="title">Title *</label> <input id="title" name="title" type="text" required>
-                        </div>
-                        <div class="form-control">
-                            <label for="author">Author *</label> <input type="text" name="author" id="author" required>
-                        </div>
-                        <div class="form-control">
-                            <label for="pages">Pages *</label> <input type="numer" name="pages" id="pages" required>
-                        </div>
-                        <div class="form-control">
-                            <label for="read">Read/Unread </label> <select name="read" id="read">
-                               <option value="select"selected>select</option>
-                                <option value="read">read</option>
-                                <option value="unread">unread</option>
-                            </select>
-                        </div>
-                        <input type="hidden" name="bookId" id="bookId" data-index-number="4" >
-                        <button class="btn" type="submit">Add Book </button>
+    
 
-                        
-                </fieldset>
-            </form>
-    </section>
+    <div class="container">
+        <div class="header"> <h1 class="title">Your Favorite Reads</h1>
+        </div>
+        <div class="sidebar">
+            <img src="img/local_library_FILL1_wght700_GRAD0_opsz48.svg" alt="Book Logo" class="library-logo">
+            <div class="dashboard">
+                <section class="book-form">
+                <div class="form-container">
+                    <form id="book-add">
+                        <fieldset>
+                            <legend>Add New Book</legend>
+                            <div class="form-control">
+                                <label for="title">Title *</label> <input id="title" name="title" type="text" required>
+                            </div>
+                            <div class="form-control">
+                                <label for="author">Author *</label> <input type="text" name="author" id="author" required>
+                            </div>
+                            <div class="form-control">
+                                <label for="pages">Pages *</label> <input type="number" name="pages" id="pages" required>
+                            </div>
+                            <div class="form-control">
+                                <label for="read">Read/Unread </label> <select name="read" id="read">
+                                    <option value="select" selected>select</option>
+                                    <option value="read">read</option>
+                                    <option value="unread">unread</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="bookId" id="bookId" data-index-number="4">
+                            <button class="btn" type="submit">Add Book </button>
+                
+                
+                        </fieldset>
+                    </form>
+            </section>
+            </div>
+            
+            
+    
+        </div>
+        <div class="main">
+            <div class="projects">
+                <div class="section-title">
+                    <h3 class="section">Your Collection</h3>
+                </div>
+                <ul class="proj-cont">
+                    <li class="proj-item">
+                        <h4 class="proj-title">Catch-22</h4>
+                        <div 
+                        </div>
+                        <div class="proj-actions">
+                                <img src="img/toggle_on_FILL1_wght700_GRAD0_opsz48.svg" alt="Read / Unread Toggle" class="read">
+                                <img src="img/delete_forever_FILL0_wght700_GRAD0_opsz24.svg" alt="Delete Book" class="delete">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
 </body>
 </html>
