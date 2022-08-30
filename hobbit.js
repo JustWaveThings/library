@@ -7,9 +7,9 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus
 }
 
-Book.prototype.info = function () {
+/* Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus}.`
-}
+} */
 
 Book.prototype.bookIndex = function (length = 5) {
   this.index = "";
@@ -22,12 +22,15 @@ Book.prototype.bookIndex = function (length = 5) {
   return this.index
 };
 
+Book.prototype.addBookToLibrary = function (book) {
+    this.bookIndex();
+    myLibrary.push(book);
+};
+
 const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 450, "yes, I have read it")
 const book2 = new Book("Catch-22", "Joseph Heller", 400, "Yes, I have read it")
 
-function addBookToLibrary(book) {
-    myLibrary.push(book);
-}
+
 
 
 //console.log(book1.info()) // The Hobbit by J.R.R. Tolkien, 450 pages, yes, I have read it.
