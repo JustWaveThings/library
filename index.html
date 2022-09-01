@@ -32,10 +32,9 @@
                                 <label for="pages">Pages *</label> <input type="number" name="pages" id="pages" required>
                             </div>
                             <div class="form-control">
-                                <label for="read">Read/Unread </label> <select name="read" id="read">
-                                    <option value="select" selected>select</option>
-                                    <option value="read">read</option>
-                                    <option value="unread">unread</option>
+                                <label for="read">Read / Unread </label> <select name="read" id="read">
+                                    <option value="read"selected>Read</option>
+                                    <option value="unread">Unread</option>
                                 </select>
                             </div>
                             <input type="hidden" name="bookId" id="bookId" data-index-number="4">
@@ -57,12 +56,21 @@
             <ul class="proj-cont">
                 <li class="proj-item">
                     <h4 class="proj-title">Catch-22</h4>
-                    <div
-                    <div class="proj-actions">
-                            <img src="img/toggle_on_FILL1_wght700_GRAD0_opsz48.svg" alt="Read / Unread Toggle" class="read">
-                            <img src="img/delete_forever_FILL0_wght700_GRAD0_opsz24.svg" alt="Delete Book" class="delete">
+                    <div class="toggle-read">
+                        <p class="read-text-left">Unread</p><img src="img/toggle_on_FILL1_wght700_GRAD0_opsz48.svg" alt="Read / Unread Toggle" class="book-button read"><p class="read-text-right">Read</p>
                     </div>
+                    <img src="img/delete_forever_FILL0_wght700_GRAD0_opsz24.svg" alt="Delete Book" class="book-button delete">
                 </li>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                <div class="dummy-containers"></div>
+                
             </ul>
          </div>
     </div>
