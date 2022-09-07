@@ -38,5 +38,19 @@ const book1 = new Book(
 const book2 = new Book("Catch-22", "Joseph Heller", 400, "Yes, I have read it");
 
 book1.addBookToLibrary(); // adds book1 to myLibrary array with the index as a property
+book2.addBookToLibrary(); 
 
 console.log(myLibrary);
+
+
+// DOM manipulation below... 
+
+const form = document.getElementById('book-add');
+const formData = new FormData(form);
+
+const btn = document.querySelector('#btn');
+btn.onclick = () =>  {
+  for (const [key, value] of formData) {
+    alert(`${key}: ${value}`)
+  }
+}
