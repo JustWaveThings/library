@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <script src="library.js" defer></script>
+    <script src="library3.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,12 +31,7 @@
                             <div class="form-control">
                                 <label for="pages">Pages *</label> <input type="number" name="pages" id="pages" required>
                             </div>
-                            <div class="form-control">
-                                <label for="read">Read / Unread </label> <select name="read" id="read">
-                                    <option value="read"selected>Read</option>
-                                    <option value="unread">Unread</option>
-                                </select>
-                            </div>
+                            <input type="hidden" name="readStatus" id="readStatus" value="read" >
                             <input type="hidden" name="bookId" id="bookId" data-index-number="4">
                             <button id="btn" type="submit">Add Book </button>
                 
@@ -51,21 +46,24 @@
         </div>
         <div class="main">
             <div class="section-title">
-                    <h3 class="section">In Your Collection :</h3>
+                    <h3 class="section">In Your Collection:</h3>
             </div>
-            <ul class="proj-cont">
-                <li class="proj-item">
+            <ul class="proj-cont" id="proj-cont">
+                <!-- <li class="proj-item">
                     <h4 class="item-desc book-title">Title: </h4>
-                    <h5 class="item-book-title">Catch-22</h5>
+                    <h5 class="item-book-title" id="title-cont"></h5>
+
                     <h4 class="item-desc author">Author: </h4>
-                    <h5 class="item-author">Joseph Heller</h5>
+                    <h5 class="item-author" id="author-cont"></h5>
+
                     <h4 class="item-desc pages">Pages: </h4>
-                    <h5 class="item-pages">300</h5>
+                    <h5 class="item-pages" id="pages-cont"></h5>
+
                     <div class="toggle-read">
                         <p class="read-text-left">Unread</p><img src="img/toggle_on_FILL1_wght700_GRAD0_opsz48.svg" alt="Read / Unread Toggle" class="book-button read"><p class="read-text-right">Read</p>
                     </div>
                     <img src="img/delete_forever_FILL0_wght700_GRAD0_opsz24.svg" alt="Delete Book" class="book-button delete">
-                </li>
+                </li> -->
                 
                
 

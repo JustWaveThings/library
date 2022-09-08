@@ -1,4 +1,4 @@
-myLibrary = [];
+ myLibrary = [];
 
 function Book(title, author, pages, readStatus) {
   this.title = title;
@@ -6,10 +6,6 @@ function Book(title, author, pages, readStatus) {
   this.pages = pages;
   this.readStatus = readStatus;
 }
-
-/* Book.prototype.info = function () {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus}.`
-} */
 
 Book.prototype.bookIndex = function (length = 5) {
   this.index = "";
@@ -29,30 +25,13 @@ Book.prototype.addBookToLibrary = function () {
   myLibrary.push(this);
 };
 
-const book1 = new Book(
+/* const book1 = new Book(
   "The Hobbit",
   "J.R.R. Tolkien",
   450,
-  "yes, I have read it"
+  "yes, I have read it"d
 );
-const book2 = new Book("Catch-22", "Joseph Heller", 400, "Yes, I have read it");
+const book2 = new Book("Catch-22", "Joseph Heller", 400, "Yes, I have read it"); */
 
 /* book1.addBookToLibrary(); // adds book1 to myLibrary array with the index as a property
 book2.addBookToLibrary(); */
-
-const form = document.getElementById("book-add");
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const myFormData = new FormData(e.target);
-
-    const formDataObj = Object.fromEntries(myFormData.entries());
-
-    console.log(formDataObj);
-
-/*     formDataObj.addBookToLibrary();
-    console.log(myLibrary); */
-    
-});
-    
