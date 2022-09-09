@@ -1,4 +1,4 @@
-myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, readStatus) {
   this.title = title;
@@ -6,10 +6,6 @@ function Book(title, author, pages, readStatus) {
   this.pages = pages;
   this.readStatus = readStatus;
 }
-
-/* Book.prototype.info = function () {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus}.`
-} */
 
 Book.prototype.bookIndex = function (length = 5) {
   this.index = "";
@@ -25,8 +21,8 @@ Book.prototype.bookIndex = function (length = 5) {
 };
 
 Book.prototype.addBookToLibrary = function () {
-  this.bookIndex();
-  myLibrary.push(this);
+    this.bookIndex();
+    myLibrary.push(this);
 };
 
 const book1 = new Book(
@@ -40,11 +36,16 @@ const book2 = new Book("Catch-22", "Joseph Heller", 400, "Yes, I have read it");
 book1.addBookToLibrary();
 book2.addBookToLibrary();
 
-/* document.getElementById("title-cont").textContent = myLibrary[0].title;
-document.getElementById("author-cont").textContent = myLibrary[0].author;
-document.getElementById("pages-cont").textContent = myLibrary[0].pages; */
+;
 
-console.log(myLibrary[0])
+function addBook(event) {
+    event.preventDefault();
+ const sample = new Book(
+    `${formTitle.value}, ${formAuthor.value}, ${formPages.value}, ${formRead.value}`
+  );
+    sample.addBookToLibrary()
+};
+
 
 function deleteBook() {
     return alert("This book will eventually be deleted")
@@ -53,10 +54,8 @@ function deleteBook() {
 // creating dom elements to be populated 1 for each book
 
 
-const bookContainer = document.createElement('li'); // needs appended as child to ul proj - cont
+const bookContainer = document.createElement('li'); 
 bookContainer.classList.add('proj-item');
-
-// creating elements in the bookcontainer
 
 const titleLabel = document.createElement('h4');
 titleLabel.classList.add('item-desc', 'book-title');
@@ -122,3 +121,17 @@ bookContainer.appendChild(readLabel);
 bookContainer.appendChild(readValue);
 bookContainer.appendChild(deleteIcon);
 
+
+// getting the form data, for real this time... 
+
+const formTitle = document.getElementById('title');
+const formAuthor = document.getElementById('author');
+const formPages = document.getElementById('pages');
+const formRead = document.getElementById('readStatus');
+const formButton = document.querySelector('#btn');
+formButton.addEventListener("click", (event) => { addBook(event)});
+
+
+
+
+console.log(myLibrary)
