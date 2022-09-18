@@ -162,7 +162,7 @@ function drawLibrary() {
 		deleteIcon.setAttribute('type', 'image');
 		deleteIcon.setAttribute('name', 'delete');
 		deleteIcon.setAttribute('id', 'delete');
-		deleteIcon.setAttribute('src', '/img/delete.svg');
+		deleteIcon.setAttribute('src', 'img/delete.svg');
 
 		deleteIcon.classList.add('delete');
 		deleteIcon.dataset.indexValue = myLibrary[i].index;
