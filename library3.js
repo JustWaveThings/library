@@ -55,7 +55,7 @@ function addBook(event) {
 	);
 	sample.addBookToLibrary();
 	emptyBookshelf();
-	drawLibrary(myLibrary[length - 1]);
+	drawLibrary();
 	clearForm();
 }
 
@@ -133,24 +133,37 @@ function drawLibrary() {
 		readLabel.textContent = 'Read?:';
 
 		const readValue = document.createElement('input');
-		readValue.classList.add('toggle-button');
-		readValue.id = 'toggle-button';
+		readValue.setAttribute('class', 'checkbox');
+		readValue.id = 'checkbox';
 		readValue.setAttribute('type', 'checkbox');
-		readValue.setAttribute('name', 'toggle');
-		readValue.setAttribute('value', myLibrary[i].readStatus);
+		readValue.setAttribute('name', 'checkbox');
+		console.log(
+			`On redraw/reload, for book ${i} the read status is: ${myLibrary[i].readStatus}`
+		);
+		if (myLibrary[i].readStatus === 'read') {
+			readValue.checked = true;
+		}
 		readValue.dataset.indexValue = myLibrary[i].index;
 		readValue.addEventListener('pointerup', (event) => {
 			setReadStatus(event);
 		});
 
+		/* 		function setReadStatus(event) {
+		const bookToChange = event.currentTarget.dataset.indexValue;
+		const foundIndex = myLibrary.findIndex(
+			(x) => x.index === bookToChange
+		);
+		myLibrary[foundIndex].readStatus === 'unread'
+			? (myLibrary[foundIndex].readStatus = 'read')
+			: (myLibrary[foundIndex].readStatus = 'unread');
+	}; */
+
 		const deleteIcon = document.createElement('input');
 		deleteIcon.setAttribute('type', 'image');
 		deleteIcon.setAttribute('name', 'delete');
 		deleteIcon.setAttribute('id', 'delete');
-		deleteIcon.setAttribute(
-			'src',
-			'/library/img/delete_forever_FILL0_wght700_GRAD0_opsz24.svg'
-		);
+		deleteIcon.setAttribute('src', '/img/delete.svg');
+
 		deleteIcon.classList.add('delete');
 		deleteIcon.dataset.indexValue = myLibrary[i].index;
 		deleteIcon.addEventListener('click', (event) => {
