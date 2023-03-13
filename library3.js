@@ -1,11 +1,13 @@
 let myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
-	(this.title = title),
-		(this.author = author),
-		(this.pages = pages),
-		(this.readStatus = readStatus);
-}
+let Book = class {
+	constructor(title, author, pages, readStatus) {
+		this.title = title;
+		this.author = author;
+		this.pages = pages;
+		this.readStatus = readStatus;
+	}
+};
 
 Book.prototype.bookIndex = function (length = 5) {
 	this.index = '';
